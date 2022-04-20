@@ -1,0 +1,8 @@
+$bg: #f8fbf5;
+$color: hsl(90, 50%, 50%);
+
+@mixin wrapper {
+  // Needs to be in Uppercase because SASS has it's own min & max functions that do not allow different units. since sass is case sensitive, using MIN forces css version to be use because css ios case-insensitive
+  width: MIN(1000px, 96%);
+  margin: 0 auto;
+}

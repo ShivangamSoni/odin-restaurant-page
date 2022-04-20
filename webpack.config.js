@@ -13,8 +13,7 @@ const config = {
     path: path.resolve(__dirname, "dist"),
     clean: true,
   },
-  mode: "development",
-  devtool: "inline-source-map",
+  mode: "production",
   plugins: [
     new HtmlWebpackPlugin({
       title: "Restaurant Web App",
@@ -24,7 +23,7 @@ const config = {
   ],
   module: {
     rules: [
-      // Babel on JS
+      // For Babel JS
       {
         test: /\.js$/i,
         exclude: /node_modules/,

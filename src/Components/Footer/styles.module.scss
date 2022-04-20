@@ -1,0 +1,77 @@
+@import "../../variables";
+
+.footer {
+  padding: 20px 0;
+
+  .wrapper {
+    @include wrapper;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+
+    .aboutSection {
+      flex: 3;
+
+      .info {
+        text-align: justify;
+        margin-bottom: 10px;
+      }
+
+      .socialLinks {
+        a {
+          color: grey;
+        }
+      }
+    }
+
+    .heading {
+      font-weight: 500;
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      position: relative;
+
+      .header::after {
+        content: "";
+        position: absolute;
+      }
+    }
+
+    .linksSection {
+      flex: 1;
+
+      ul {
+        list-style: none;
+
+        li {
+          a {
+            color: grey;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: 2px solid underline;
+              color: $color;
+            }
+          }
+        }
+
+        li + li {
+          margin-top: 5px;
+        }
+      }
+    }
+
+    .contactSection {
+      flex: 1;
+
+      p {
+        font-size: 1rem;
+        font-weight: 500;
+      }
+
+      p + p {
+        margin-top: 5px;
+      }
+    }
+  }
+}
