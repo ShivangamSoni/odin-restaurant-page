@@ -7,6 +7,7 @@ import Footer from "./Components/Footer";
 
 // Pages
 import Home from "./Pages/Home";
+import Menu from "./Pages/Menu";
 import About from "./Pages/About";
 
 const siteLinks = [
@@ -31,6 +32,10 @@ const changeTab = (s) => {
     return;
   }
 
+  // Scroll to Top
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+
   selectedTab = s;
   render();
 };
@@ -45,7 +50,7 @@ const render = () => {
   if (selectedTab === "/") {
     main.appendChild(Home());
   } else if (selectedTab === "/menu") {
-    main.innerHTML = `<h1>Menu</h1>`;
+    main.appendChild(Menu());
   } else if (selectedTab === "/about") {
     main.appendChild(About(changeTab));
   }

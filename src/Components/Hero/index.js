@@ -2,7 +2,7 @@
 import styles from "./styles.module.scss";
 
 // Images
-import Pizza from "../../Assets/pizza.png";
+const { default: Pizza } = await import("../../Assets/pizza.png");
 
 const Hero = () => {
   const div = document.createElement("div");

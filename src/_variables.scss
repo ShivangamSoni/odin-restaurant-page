@@ -1,7 +1,10 @@
 $bg: #f8fbf5;
 $color: hsl(90, 40%, 50%);
+$colorDark: hsl(90, 50%, 30%);
 $textLight: #7d7d7d;
 $textHeading: #fec10f;
+$starLight: #ccc;
+$starActive: #ffcc00;
 
 @mixin wrapper {
   // Needs to be in Uppercase because SASS has it's own min & max functions that do not allow different units. since sass is case sensitive, using MIN forces css version to be use because css ios case-insensitive

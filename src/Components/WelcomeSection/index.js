@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 import commonStyles from "../../commonStyles.module.scss";
 
 // Image
-import chef from "../../Assets/chef.png";
+const { default: Chef } = await import("../../Assets/chef.png");
 
 const WelcomeSection = () => {
   const div = document.createElement("div");
@@ -16,7 +16,7 @@ const WelcomeSection = () => {
   chefImage.classList.add(styles.chefImage);
 
   const img = document.createElement("img");
-  img.src = chef;
+  img.src = Chef;
   img.loading = "lazy";
 
   chefImage.appendChild(img);

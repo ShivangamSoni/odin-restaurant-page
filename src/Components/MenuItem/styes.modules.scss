@@ -1,0 +1,144 @@
+@import "../../variables";
+
+.card {
+  display: grid;
+  grid-template-rows: 250px auto;
+  gap: 15px;
+  background-color: $bg;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  transition: transform 250ms linear;
+
+  &::after {
+    content: "";
+    position: relative;
+    left: -3%;
+    top: calc(100% + 10px);
+    width: 106%;
+    height: 5px;
+    background-color: $colorDark;
+    transition: transform 250ms linear;
+    transform: scale(0);
+  }
+
+  &:hover {
+    border-radius: 10px 10px 0 0;
+    transform: translateY(-5px);
+
+    &::after {
+      transform: scale(1);
+    }
+  }
+
+  .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .actions {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: rgba(168, 172, 176, 0.4);
+      transform: scale(0);
+      transition: transform 300ms linear;
+
+      .btn {
+        appearance: none;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        border-radius: 50%;
+        padding: 0.3rem;
+        width: 30px;
+        height: 30px;
+        background-color: $color;
+        display: grid;
+        place-items: center;
+        transition: transform 200ms linear;
+
+        svg {
+          fill: #fff;
+        }
+
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+
+    &:hover .actions {
+      transform: scale(1);
+    }
+  }
+
+  .info {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    .name {
+      font-weight: 700;
+    }
+
+    .rating {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .star {
+        display: inline-block;
+        margin-left: 0.9em;
+        margin-right: 0.9em;
+        margin-bottom: 1.2em;
+        border-right: 0.3em solid transparent;
+        border-bottom: 0.7em solid $starLight;
+        border-left: 0.3em solid transparent;
+        font-size: 0.7rem;
+        position: relative;
+
+        &.active {
+          border-bottom-color: $starActive;
+        }
+
+        &:before,
+        &:after {
+          content: "";
+          position: absolute;
+          top: 0.6em;
+          left: -1em;
+          border-right: 1em solid transparent;
+          border-bottom: 0.7em solid;
+          border-bottom-color: inherit;
+          border-left: 1em solid transparent;
+          transform: rotate(-35deg);
+        }
+
+        &:after {
+          transform: rotate(35deg);
+        }
+      }
+    }
+
+    .price {
+      color: $color;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+  }
+}

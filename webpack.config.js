@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const config = {
-  entry: "./src/index.js",
+  entry: ["@babel/polyfill", "./src/index.js"],
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
@@ -74,6 +74,9 @@ const config = {
         loader: "svg-inline-loader",
       },
     ],
+  },
+  experiments: {
+    topLevelAwait: true,
   },
 };
 

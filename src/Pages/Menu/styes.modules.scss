@@ -1,0 +1,25 @@
+@import "../../variables";
+
+.menu {
+  padding: 70px 0;
+
+  .wrapper {
+    @include wrapper;
+
+    .title {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    .listing {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+
+      @media screen and (max-width: 600px) {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}

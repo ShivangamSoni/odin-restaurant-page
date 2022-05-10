@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 import commonStyles from "../../commonStyles.module.scss";
 
 // Images
-import Burger from "../../Assets/burger.png";
+const { default: Burger } = await import("../../Assets/burger.png");
 
 const History = (changeTab) => {
   const div = document.createElement("div");
