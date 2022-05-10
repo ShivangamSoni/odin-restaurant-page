@@ -5,6 +5,10 @@ import "./globalStyles.scss";
 import Header from "./Components/Header/index";
 import Footer from "./Components/Footer";
 
+// Pages
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+
 const siteLinks = [
   {
     to: "/",
@@ -36,14 +40,14 @@ const render = () => {
   content.innerHTML = "";
 
   content.appendChild(Header(siteLinks, changeTab, selectedTab));
-  const main = document.createElement(main);
+  const main = document.createElement("main");
 
   if (selectedTab === "/") {
-    main.innerHTML = `<h2>Home</h2>`;
+    main.appendChild(Home());
   } else if (selectedTab === "/menu") {
-    main.innerHTML = `<h2>Menu</h2>`;
+    main.innerHTML = `<h1>Menu</h1>`;
   } else if (selectedTab === "/about") {
-    main.innerHTML = `<h2>About</h2>`;
+    main.appendChild(About(changeTab));
   }
 
   content.appendChild(main);

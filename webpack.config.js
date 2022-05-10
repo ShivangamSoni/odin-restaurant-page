@@ -59,6 +59,20 @@ const config = {
         include: path.resolve(__dirname, "src"),
         exclude: /\.module\.(css|scss|sass)$/i,
       },
+      // For Images
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: "file-loader",
+          },
+        ],
+      },
+      // For SVG (Inline)
+      {
+        test: /\.svg$/,
+        loader: "svg-inline-loader",
+      },
     ],
   },
 };

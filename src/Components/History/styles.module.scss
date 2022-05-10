@@ -1,0 +1,64 @@
+@import "../../variables";
+
+.history {
+  padding: 70px 0;
+
+  .wrapper {
+    @include wrapper;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+
+    @media screen and (max-width: 600px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: minmax(0, 1fr) 350px;
+      gap: 15px;
+    }
+
+    .info {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 5px;
+
+      .title {
+        font-size: 1.75rem;
+        font-weight: 600;
+        width: 70%;
+      }
+
+      .desc {
+        color: $textLight;
+        line-height: 1.6;
+      }
+
+      .exploreBtn {
+        appearance: none;
+        border: none;
+        outline: none;
+        background-color: $color;
+        color: #fff;
+        font-size: 0.8rem;
+        padding: 0.5rem 0.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+    }
+
+    .image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+
+      img {
+        width: 100%;
+        height: 350px;
+        object-fit: contain;
+      }
+    }
+  }
+}
